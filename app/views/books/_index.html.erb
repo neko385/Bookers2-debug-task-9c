@@ -20,6 +20,9 @@
         <td id="favorite_<%= book.id %>">
           <%= render 'favorites/favorite', book: book %>
         </td>
+        <td class="book-comments-counter">
+          <%= render 'book_comments/counter', book: book %>
+        </td>
       </tr>
     <% end %>
   </tbody>
