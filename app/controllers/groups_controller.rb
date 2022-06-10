@@ -1,6 +1,10 @@
 class GroupsController < ApplicationController
   before_action :authenticate_user!
   before_action :ensure_correct_user, only: [:edit, :update]
+  
+  def new
+    @group = Group.new
+  end
 
   def index
     @book = Book.new
@@ -18,9 +22,7 @@ class GroupsController < ApplicationController
     redirect_to groups_path
   end
 
-  def new
-    @group = Group.new
-  end
+ 
 
   def create
     @group = Group.new(group_params)

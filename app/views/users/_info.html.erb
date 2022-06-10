@@ -27,3 +27,12 @@
     <% end %>
   <% end %>
 </div>
+<div class="row">
+  <% if user_signed_in? && @user == current_user %>
+    <% unless @user.email == "text@example.com" then %>
+    <td>
+      <%= link_to "退会", user_path(current_user.id), class:"destroy-user", method: :delete, "data-confirm" => "本当に退会しますか？" %>
+    </td>
+    <% end %>
+  <% end %>
+</div>
